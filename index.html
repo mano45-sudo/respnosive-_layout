@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Porsche | Precision Performance</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== THEME ===== */
+:root {
+    --bg-dark: #0b0b0b;
+    --bg-light: #141414;
+    --accent: #e10600;
+    --text-main: #ffffff;
+    --text-muted: #b5b5b5;
+}
+
+/* ===== BASE ===== */
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.layout {
+    display: grid;
+    gap: 24px;
+    padding: 28px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: #000;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 56px;
+    letter-spacing: 6px;
+}
+
+.header p {
+    margin-top: 8px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* ===== NAVIGATION (UPDATED) ===== */
+.navigation {
+    background: transparent;
+    padding: 10px 0;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.navigation li {
+    padding: 8px 16px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: var(--text-main);
+}
+
+.navigation li:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background: var(--bg-light);
+    padding: 30px;
+}
+
+.sidebar h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.sidebar p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ===== MAIN ===== */
+.main {
+    background: #0f0f0f;
+    padding: 40px;
+}
+
+.main h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.main p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+/* ===== ADS (UPDATED) ===== */
+.ads {
+    background: var(--bg-light);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ads h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.ads img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid #222;
+}
+
+/* ===== MOBILE ===== */
+.layout {
+    grid-template-areas:
+        "header"
+        "navigation"
+        "main"
+        "sidebar"
+        "ads"
+        "footer";
+}
+
+.header { grid-area: header; }
+.navigation { grid-area: navigation; }
+.main { grid-area: main; }
+.sidebar { grid-area: sidebar; }
+.ads { grid-area: ads; }
+.footer { grid-area: footer; }
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+            "header header"
+            "navigation navigation"
+            "sidebar main"
+            "ads footer";
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "sidebar navigation ads"
+            "sidebar main ads"
+            "footer footer footer";
+    }
+
+    .navigation ul {
+        justify-content: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <header class="header">
+        <h1>PORSCHE</h1>
+        <p>Performance · Precision · Legacy</p>
+    </header>
+
+    <nav class="navigation">
+        <ul>
+            <li>911</li>
+            <li>Taycan</li>
+            <li>Motorsport</li>
+            <li>Innovation</li>
+        </ul>
+    </nav>
+
+    <aside class="sidebar">
+        <h3>Brand DNA</h3>
+        <p>
+            Porsche stands for engineering excellence and pure driving emotion.
+            Every model reflects decades of motorsport heritage and innovation.
+        </p>
+    </aside>
+
+    <main class="main">
+        <h2>The Porsche 911</h2>
+        <p>
+            The Porsche 911 is an icon of automotive design. Its rear-engine
+            configuration delivers exceptional balance and unmistakable character.
+        </p>
+        <p>
+            Built for precision and performance, the 911 continues to set the
+            benchmark for sports cars worldwide.
+        </p>
+    </main>
+
+    <section class="ads">
+        <h3>Ads</h3>
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" alt="Porsche ad">
+        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738" alt="Porsche ad">
+    </section>
+
+    <footer class="footer">
+        © 2026 Porsche AG · M.Mano Karthik
+    </footer>
+
+</div>
+
+</body>
+</html>
